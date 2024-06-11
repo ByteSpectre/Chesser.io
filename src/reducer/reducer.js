@@ -18,6 +18,23 @@ export const reducer = (state, action) => {
             }
         }
 
+        case actionTypes.GENERATE_CANDIDATE_MOVES : {
+            const {piece,file,rank,candidateMoves} = action.payload
+            return {
+                ...state,
+                selectedPiece: {piece,file,rank},
+                candidateMoves
+            }
+        } 
+
+        case actionTypes.CLEAR_CANDIDATE_MOVES : {
+            return {
+                ...state,
+                selectedPiece : {},
+                candidateMoves : []
+            }
+        }
+
         default : 
             return state
     }
