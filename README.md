@@ -1,70 +1,84 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<p  align="center">
+<img  width=150px  height=150px  src="https://imgur.com/kvsiJr5.png"  alt="Project logo"></a>
+</p>
 
-In the project directory, you can run:
+<h3 style="font-size:200px" align="center">CHESSER.IO</h3>
 
-### `npm start`
+  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<div  align="center"> 
+  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=react,js,html,css" />
+  </a>
+</p>
+  
 
-### `npm test`
+## 📝 Table of Contents
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [📝 Table of Contents](#-table-of-contents)
+- [🧐 About ](#-about-)
+- [✍️ Features ](#️-features-)
+- [🚀 Deployment ](#-deployment-)
+- [✍️ Authors ](#️-authors-)
 
-### `npm run build`
+## 🧐 About <a name = "about"></a>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+We built a chess web game designed for local multiplayer on a single computer. It features the full range of chess rules, including special moves and recognizing endgames like stalemate and insufficient material. Players can interact with the board visually, and the game validates and displays moves. This is a great way to enjoy chess with friends without needing multiple devices or an internet connection.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🔎 Features <a name = "features"></a>
+1. ### En Passant
+[![En Passant](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2F2FE3LpQRjN0)](https://youtu.be/2FE3LpQRjN0)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. ### Checkmate
+[![Checkmate](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2F9nuLTGv7t1A)](https://youtu.be/9nuLTGv7t1A)
 
-### `npm run eject`
+3. ### Insuficcient material
+[![Insufficient material](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2FfuQ29jceSoY)](https://youtu.be/fuQ29jceSoY)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. ### Stalemate
+[![Stalemate](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2FPT4SNkujJAU)](https://youtu.be/PT4SNkujJAU)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. ### Promotion
+[![Promotion](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2F3cxZ1WIoTyo)](https://youtu.be/3cxZ1WIoTyo)
+  
+## 🚀 Deployment <a name = "deployment"></a>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  ### Local
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Clone repository by:
+```bash
+git clone https://github.com/ByteSpectre/Chesser.io.git
+```
+2. Go to the directory where project was cloned
+```bash
+cd Chesser.io
+```
+3.  Install all dependencies of the project
+```bash
+sudo npm install 
+```
+4. Finally start server with:
+```bash
+npm start
+```
 
-## Learn More
+ ### Online
+Just go through this Vercel deployment link, [*click*](cheeserio-moshi231s-projects.vercel.app)
+  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## ✍️ Authors <a name = "authors"></a>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  
 
-### Code Splitting
+- [Magush Magomedov](https://github.com/ByteSpectre) - Project Manager, Lead Developer
+- [Darya Firsova](https://github.com/wq4rsz) - Developer, QA Engineer
+- [Kirill Ivanov](https://github.com/KirOus11) - WEB Designer, WEB Developer
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+See also the list of [contributors](https://github.com/ByteSpectre/Chesser.io/graphs/contributors) who participated in this project.
