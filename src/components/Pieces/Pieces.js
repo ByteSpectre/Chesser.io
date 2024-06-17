@@ -3,8 +3,9 @@ import Piece from './Piece'
 import { useRef  } from 'react'
 import { useAppContext }from '../../contexts/Context'
 
-import { copyPosition} from '../../helper'
 import { makeNewMove, clearCandidates } from '../../reducer/actions/move'
+import arbiter from '../../arbiter/arbiter'
+
 const Pieces = () => {
 
     const { appState , dispatch } = useAppContext();
@@ -18,21 +19,25 @@ const Pieces = () => {
         return {x,y}
     }
 
-    const onDrop = e => {
-        e.preventDefault()
-
-        const newPosition = copyPosition (currentPosition)
+    const move = e => {
         const {x,y} = calculateCoords(e)
-        
-        const [p,rank,file] = e.dataTransfer.getData("text").split(',')
+        const [piece,rank,file] = e.dataTransfer.getData("text").split(',')
 
         if(appState.candidateMoves.find(m => m[0] === x && m[1] === y)){
-            newPosition[Number(rank)][Number(file)] = ''
-            newPosition[x][y] = p
+            const newPosition = arbiter.performMove({
+                position:currentPosition,
+                piece,rank,file,
+                x,y
+            })
             dispatch(makeNewMove({newPosition}))
         }
         dispatch(clearCandidates())
+    }
 
+    const onDrop = e => {
+        e.preventDefault()
+
+        move (e)
     }
 
     const onDragOver = e => {e.preventDefault()}

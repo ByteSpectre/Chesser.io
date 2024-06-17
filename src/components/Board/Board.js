@@ -4,6 +4,7 @@ import { useAppContext }from '../../contexts/Context'
 import Ranks from './bits/Ranks'
 import Files from './bits/Files'
 import Pieces from '../Pieces/Pieces'
+
 const Board = () => {
     const ranks = Array(8).fill().map((x,i) => 8-i)
     const files = Array(8).fill().map((x,i) => i+1)
@@ -24,7 +25,9 @@ const Board = () => {
     }
 
     return <div className='board'>
+
         <Ranks ranks={ranks}/>
+
         <div className='tiles'>
             {ranks.map((rank,i) => 
                 files.map((file,j) => 
@@ -36,9 +39,13 @@ const Board = () => {
                     </div>
                 ))}
         </div>
+
         <Pieces/>
+
         <Files files={files}/>
+
     </div>
     
 }
+
 export default Board

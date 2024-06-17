@@ -6,6 +6,7 @@ export const makeNewMove = ({newPosition}) => {
         payload: {newPosition},
     }
 }
+
 export const clearCandidates = () => {
     return {
         type: actionTypes.CLEAR_CANDIDATE_MOVES,

@@ -2,12 +2,14 @@ export const getRookMoves = ({position,piece,rank,file}) => {
     const moves = []
     const us = piece[0]
     const enemy = us === 'w' ? 'b' : 'w'
+
     const direction = [
         [-1,0],
         [1,0],
         [0,-1],
         [0,1],
     ]
+
     direction.forEach(dir => {
         for (let i = 1; i <= 8; i++) {
             const x = rank+(i*dir[0])
@@ -24,11 +26,14 @@ export const getRookMoves = ({position,piece,rank,file}) => {
             moves.push ([x,y])
         }
     })
+
     return moves
 }
+
 export const getKnightMoves = ({position,rank,file}) => {
     const moves = []
     const enemy = position[rank][file].startsWith('w') ? 'b' : 'w'
+
     const candidates = [
         [-2,-1],
         [-2,1],
@@ -47,16 +52,19 @@ export const getKnightMoves = ({position,rank,file}) => {
     })
     return moves
 }
+
 export const getBishopMoves = ({position,piece,rank,file}) => {
     const moves = []
     const us = piece[0]
     const enemy = us === 'w' ? 'b' : 'w'
+
     const direction = [
         [-1,-1],
         [-1,1],
         [1,-1],
         [1,1],
     ]
+
     direction.forEach(dir => {
         for (let i = 1; i <= 8; i++) {
             const x = rank+(i*dir[0])
@@ -75,6 +83,7 @@ export const getBishopMoves = ({position,piece,rank,file}) => {
     })
     return moves
 }
+
 export const getQueenMoves = ({position,piece,rank,file}) => {
     const moves = [
         ...getBishopMoves({position,piece,rank,file}),
@@ -83,6 +92,7 @@ export const getQueenMoves = ({position,piece,rank,file}) => {
     
     return moves
 }
+
 export const getKingMoves = ({position,piece,rank,file}) => {
     let moves = []
     const us = piece[0]
@@ -91,6 +101,7 @@ export const getKingMoves = ({position,piece,rank,file}) => {
         [0,-1],         [0,1],
         [-1,-1],[-1,0], [-1,1],
     ]
+
     direction.forEach(dir => {
         const x = rank+dir[0]
         const y = file+dir[1]
@@ -120,7 +131,7 @@ export const getPawnMoves = ({position,piece,rank,file}) => {
     return moves
 }
 
-export const getPawnCaptures =  ({position,piece,rank,file}) => {
+export const getPawnCaptures =  ({position,prevPosition,piece,rank,file}) => {
 
     const moves = []
     const dir = piece==='wp' ? 1 : -1
@@ -135,6 +146,24 @@ export const getPawnCaptures =  ({position,piece,rank,file}) => {
     if (position?.[rank+dir]?.[file+1] && position[rank+dir][file+1].startsWith(enemy) ){
         moves.push ([rank+dir,file+1])
     }
+
+    // EnPassant
+    // Check if enemy moved twice in last round
+    const enemyPawn = dir === 1 ? 'bp' : 'wp'
+    const adjacentFiles = [file-1,file+1]
+    if(prevPosition){
+        if ((dir === 1 && rank === 4) || (dir === -1 && rank === 3)){
+            adjacentFiles.forEach(f => {
+                if (position?.[rank]?.[f] === enemyPawn && 
+                    position?.[rank+dir+dir]?.[f] === '' &&
+                    prevPosition?.[rank]?.[f] === '' && 
+                    prevPosition?.[rank+dir+dir]?.[f] === enemyPawn){
+                        moves.push ([rank+dir,f])
+                    }
+            })
+        }
+    }
+
 
     return moves
 }

@@ -8,7 +8,7 @@ export const reducer = (state, action) => {
                 ...position,
                 action.payload.newPosition
             ]
-
+            
             turn = turn === 'w' ? 'b' : 'w'
 
             return {
@@ -28,11 +28,11 @@ export const reducer = (state, action) => {
 
         case actionTypes.CLEAR_CANDIDATE_MOVES : {
             return {
-                ...state,   
+                ...state,
                 candidateMoves : []
             }
         }
-
+        
         default : 
             return state
     }
