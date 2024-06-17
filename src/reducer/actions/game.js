@@ -14,6 +14,13 @@ export const detectStalemate = () => {
     }
 }
 
+export const detectCheckmate = (winner) => {
+    return {
+        type: actionTypes.WIN,
+        payload : winner
+    }
+}
+
 export const setupNewGame = () => {
     return {
         type: actionTypes.NEW_GAME,

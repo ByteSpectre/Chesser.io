@@ -7,6 +7,7 @@ const actionTypes = {
     "STALEMATE" : "STALEMATE",
     "NEW_GAME" : "NEW_GAME",
     "INSUFFICIENT_MATERIAL" : "INSUFFICIENT_MATERIAL",
+    "WIN" : "WIN",
 }
 
 export default actionTypes
