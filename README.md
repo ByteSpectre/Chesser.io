@@ -68,7 +68,7 @@ npm start
 ```
 
  ### Online
-Just go through this Vercel deployment link, [*click*](cheeserio-moshi231s-projects.vercel.app)
+Just go through this Vercel deployment link, [*click*](https://cheeserio-moshi231s-projects.vercel.app/)
   
 
 ## ✍️ Authors <a name = "authors"></a>
